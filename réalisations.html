@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Membership - Association</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <style>
+
+ :root {
+     --couleur-primaire: #1a202c; 
+     --couleur-secondaire: #e3342f; 
+}
+        
+/* HERO */
+.custom-hero { 
+    background: url('image/back.png.jpg') center/cover no-repeat; 
+    height: 370px; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    padding-top: 60px; 
+}
+/* Style pour les filtres actifs */
+.active-filter {
+    background-color: var(--couleur-secondaire) !important;
+    color: white !important;
+    border-color: var(--couleur-secondaire) !important;
+}
+    </style>
+
+
+    <section class="bg-dark text-white py-5 custom-hero">
+        <div class="container text-center">
+            <h1 class="display-6">Nous Avons Réalisé Plus De 20 Projets</h1>
+            <nav aria-label="breadcrumb ">
+                <ol class="breadcrumb justify-content-center custom-breadcrumb">
+                    <li class="breadcrumb-item"><a href="#" class="text-white">Accueil</a></li>
+                    <li class="breadcrumb-item active text-danger" aria-current="page">Association</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <main class="container my-5">
+        <div class="d-flex flex-wrap justify-content-center mb-4">
+            <button class="btn btn-sm btn-outline-dark mx-2 my-1 filter-btn active-filter" data-filter="voir-tout" type="button">Voir Tout</button>
+            <button class="btn btn-sm btn-outline-dark mx-2 my-1 filter-btn" data-filter="financier" type="button">Financier</button>
+            <button class="btn btn-sm btn-outline-dark mx-2 my-1 filter-btn" data-filter="communication" type="button">Communication</button>
+            <button class="btn btn-sm btn-outline-dark mx-2 my-1 filter-btn" data-filter="entreprises" type="button">Entreprises</button>
+        </div>
+
+        <div class="row g-3" id="photo-gallery">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 photo-item "> 
+                <div class="card border-0 rounded-0 custom-card-hover">
+                    <img src="image/img1.jpg" class="card-img-top custom-grayscale" alt="Projet 1">
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 photo-item ">
+                <div class="card border-0 rounded-0 custom-card-hover">
+                    <img src="image/img2.jpg" class="card-img-top custom-grayscale" alt="Projet 2">
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 photo-item ">
+                <div class="card border-0 rounded-0 custom-card-hover">
+                    <img src="image/img3.jpg" class="card-img-top custom-grayscale" alt="Projet 3">
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 photo-item ">
+                <div class="card border-0 rounded-0 custom-card-hover">
+                    <img src="image/img4.jpg" class="card-img-top custom-grayscale" alt="Projet 4">
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 photo-item ">
+                <div class="card border-0 rounded-0 custom-card-hover">
+                    <img src="image/img5.jpg" class="card-img-top custom-grayscale" alt="Projet 5">
+                </div>
+            </div>
+             <div class="col-12 col-sm-6 col-md-4 col-lg-3 photo-item ">
+                <div class="card border-0 rounded-0 custom-card-hover">
+                    <img src="image/img6.jpg" class="card-img-top custom-grayscale" alt="Projet 6">
+                </div>
+            </div>
+             <div class="col-12 col-sm-6 col-md-4 col-lg-3 photo-item ">
+                <div class="card border-0 rounded-0 custom-card-hover">
+                    <img src="image/img7.jpg" class="card-img-top custom-grayscale" alt="Projet 7">
+                </div>
+            </div>
+             <div class="col-12 col-sm-6 col-md-4 col-lg-3 photo-item ">
+                <div class="card border-0 rounded-0 custom-card-hover">
+                    <img src="image/img8.jpg" class="card-img-top custom-grayscale" alt="Projet 8">
+                </div>
+            </div>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 photo-item ">
+                <div class="card border-0 rounded-0 custom-card-hover">
+                    <img src="image/img9.jpg" class="card-img-top custom-grayscale" alt="Projet 9">
+                </div>
+            </div>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 photo-item ">
+                <div class="card border-0 rounded-0 custom-card-hover">
+                    <img src="image/img10.jpg" class="card-img-top custom-grayscale" alt="Projet 10">
+                </div>
+            </div>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 photo-item ">
+                <div class="card border-0 rounded-0 custom-card-hover">
+                    <img src="image/img11.jpg" class="card-img-top custom-grayscale" alt="Projet 11">
+                </div>
+            </div>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 photo-item ">
+                <div class="card border-0 rounded-0 custom-card-hover">
+                    <img src="image/img12.jpg" class="card-img-top custom-grayscale" alt="Projet 12">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+  
+</body>
+</html>
