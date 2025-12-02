@@ -1,6 +1,4 @@
 
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -81,11 +79,11 @@
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="evenements.html">Nos événements</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="partenaires.html">Nos partenaires</a></li>
+            <li><a class="dropdown-item" href="#">Nos partenaires</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="roles.html">Gérer les roles</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="tableau-de-bord.html">Tableau de bord</a></li>
+            <li><a class="dropdown-item" href="#">Tableau de bord</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="gestion-membres.html">Liste des membres</a></li>
           </ul>
@@ -132,98 +130,89 @@
   </div>
 </nav>
 
-<div class="container py-5">
+<main class="py-5 bg-light">
+    <div class="container">
 
-    <div class="custom-hero">
-        <h1 class="display-5 fw-bold text-white">Gestion des Cotisations</h1>
-    </div>
-
-    <!-- Définition des types de cotisation -->
-    <div class="card shadow p-4 mb-5">
-        <h4>Définir une cotisation</h4>
-        <form id="formTypeCotisation">
-            <div class="row g-3">
-                <div class="col-md-6">
-                    <label class="form-label">Nom de la cotisation *</label>
-                    <input type="text" class="form-control" id="cotisation_nom" required>
-                </div>
-                <div class="col-md-6">
-                    <label class="form-label">Montant *</label>
-                    <input type="number" class="form-control" id="cotisation_montant" required>
-                </div>
-            </div>
-            <button class="btn btn-dark mt-3">Enregistrer</button>
-        </form>
-    </div>
-
-    <!-- Liste des types -->
-    <div class="card shadow p-4 mb-5">
-        <h4>Liste des types de cotisations</h4>
-        <table class="table table-bordered">
-            <thead class="table-dark">
-                <tr>
-                    <th>Cotisation</th>
-                    <th>Montant</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody id="typesList"></tbody>
-        </table>
-    </div>
-
-    <!-- Paiements -->
-    <div class="card shadow p-4 mb-5">
-        <h4>Enregistrer un Paiement</h4>
-        <form id="formPaiement">
-            <div class="row g-3">
-                <div class="col-md-6">
-                    <label class="form-label">Membre *</label>
-                    <input type="text" class="form-control" id="paiement_membre" required>
-                </div>
-                <div class="col-md-6">
-                    <label class="form-label">Type de cotisation *</label>
-                    <select id="paiement_type" class="form-select" required></select>
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label">Montant payé *</label>
-                    <input type="number" class="form-control" id="paiement_montant" required>
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label">Date *</label>
-                    <input type="date" class="form-control" id="paiement_date" required>
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label">Statut</label>
-                    <select id="paiement_statut" class="form-select">
-                        <option>Payé</option>
-                        <option>Partiel</option>
-                        <option>En retard</option>
-                    </select>
-                </div>
-            </div>
-            <button class="btn btn-dark mt-3">Ajouter Paiement</button>
-        </form>
-    </div>
-
-    <!-- Historique des paiements -->
-    <div class="card shadow p-4 mt-5">
-        <h4>Historique des Paiements</h4>
-        <table class="table table-striped">
-            <thead class="table-dark">
-                <tr>
-                    <th>Membre</th>
-                    <th>Cotisation</th>
-                    <th>Montant</th>
-                    <th>Date</th>
-                    <th>Statut</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody id="paiementListBody"></tbody>
-        </table>
-    </div>
-
+       <div class="custom-hero">
+    <h1 class="display-5 fw-bold text-white">Gestion des Rôles</h1>
 </div>
+
+
+        <!-- FORMULAIRE AJOUT ROLE -->
+        <div class="card shadow p-4 mb-5">
+            <h3 class="text-danger mb-4">Créer un Nouveau Rôle</h3>
+
+            <form id="formAddRole">
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <label class="form-label">Nom du Rôle *</label>
+                        <input type="text" id="role_name" required class="form-control">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Description</label>
+                        <input type="text" id="role_description" class="form-control">
+                    </div>
+
+                    <div class="col-12 mt-3">
+                        <h5>Permissions :</h5>
+                        <div class="row mt-2">
+                            <div class="col-md-3">
+                                <input type="checkbox" id="perm_membres" class="form-check-input">
+                                <label class="form-check-label ms-1">Gestion des membres</label>
+                            </div>
+
+                            <div class="col-md-3">
+                                <input type="checkbox" id="perm_cotisations" class="form-check-input">
+                                <label class="form-check-label ms-1">Gestion des cotisations</label>
+                            </div>
+
+                            <div class="col-md-3">
+                                <input type="checkbox" id="perm_evenements" class="form-check-input">
+                                <label class="form-check-label ms-1">Gestion des événements</label>
+                            </div>
+
+                           
+                        </div>
+                    </div>
+
+                    <div class="col-12 text-end">
+                       <button type="submit" class="btn btn-primary">Enregistrer le rôle</button>
+
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+        <!-- LISTE DES RÔLES -->
+        <div class="card shadow p-4">
+            <h3 class="text-danger mb-4">Rôles Existants</h3>
+
+            <div class="table-responsive">
+                <table class="table table-striped table-hover align-middle">
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Description</th>
+                            <th>Permissions</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="rolesListBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+
+
    
 <!-- FOOTER -->
 <footer class="text-white pt-5 pb-5" style="background-color:#021738;">
@@ -275,7 +264,7 @@
           <li class="mb-2"><a href="index.html" class="text-light text-decoration-none">Accueil</a></li>
         
 
-               <li class="nav-item dropdown">
+         <li class="nav-item dropdown">
           <a class="nav-link text-danger dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
             Association
           </a>
@@ -324,7 +313,7 @@
           </ul>
         </li>
 
-       
+      
           <li class="mb-2"><a href="contact.html" class="text-light text-decoration-none">Contact</a></li>
           <li><a href="faq.html" class="text-light text-decoration-none">FAQ</a></li>
         </ul>
@@ -362,7 +351,8 @@
       <!-- COL 4 : PHOTOS -->
       <div class="col-lg-3 col-md-6">
         <h5 class="fw-semibold mb-4">Photos Récentes</h5>
-<div class="row g-2">
+
+        <div class="row g-2">
           <div class="col-4"><img src="img12.jpg" class="img-fluid rounded" alt="Activité 1"></div>
           <div class="col-4"><img src="img11.jpg" class="img-fluid rounded" alt="Activité 2"></div>
           <div class="col-4"><img src="img5.jpg" class="img-fluid rounded" alt="Activité 3"></div>
@@ -378,7 +368,8 @@
  
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="cotisations.js"></script>
+    <script src="roles.js"></script>
   
 </body>
 </html>
+
