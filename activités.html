@@ -10,37 +10,96 @@
 </head>
 
 <body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-white bg-white py-3">
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
-        <div class="container">
-            <a class="navbar-brand fw-bold fs-3" href="#">
-                <span class="text-danger">Easy</span> <span class="text-dark">Membership</span>
+      <a class="navbar-brand fs-2 fw-bold" href="index.html">
+        <span class="text-danger">Easy</span> Membership
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+
+          <li class="nav-item">
+            <a class="nav-link active text-dark fw-semibold" href="index.html">Accueil</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link text-danger dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              Association
             </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="activités.html">Nos activités</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="gestion-evenements.html">Gestion des évènements</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="actualités.html">Nos actualités</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="evenements.html">Nos événements</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+
+              <li><a class="dropdown-item" href="gestion-roles.html">Gérer les roles</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="cotisations.html">cotisations</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="membre.html">Liste des membres</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link text-dark dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              Vous Êtes Aidant
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="adhésion-plateforme.html">Faire un don</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="adhésion-plateforme.html">Adhérer</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+
+              <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item" href="adhésion-plateforme.html">Créer un compte adhérent</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
 
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        </ul>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto fw-semibold">
-                    <li class="nav-item"><a class="nav-link text-dark" href="#">Accueil</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-danger" href="#">Association</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-dark" href="#">Vous Etes Membre ?</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link text-dark" href="#">Contact</a></li>
-                </ul>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="contact.html">Contact</a>
+        </li>
 
-                <a href="#" class="btn btn-danger text-white px-4 fw-bold rounded-0">
-                    <i class="fas fa-user me-2"></i>ACHETER
-                </a>
-            </div>
-        </div>
-    </nav>
+        </ul>
+      </div>
+
+      <!-- BOUTON ADHÉRER -->
+      <a href="adherer.html" class="btn btn- px-4 py-2 fw-semibold rounded-1 d-flex align-items-center"
+        style="background-color: #ff3b48;">
+        <i class="bi bi-person-fill me-2"></i> ADHÉRER
+      </a>
+
+    </div>
+  </nav>
 
     <!-- section hero -->
     <header class="position-relative w-100 d-flex align-items-center justify-content-center" style="height: 300px; background: linear-gradient(rgba(13, 27, 42, 0.9), rgba(13, 27, 42, 0.8)), 
