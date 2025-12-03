@@ -18,6 +18,7 @@
     /* -------------------------- STYLES HERO SECTION -------------------------- */
     .hero-section {
       /* Hauteur minimale pour la section (nécessaire pour l'image de fond) */
+      margin-top: 5rem;
       min-height: 90vh;
       background-size: cover;
       background-position: center;
@@ -114,13 +115,22 @@
     .grayscale-image {
       filter: grayscale(100%);
     }
+
+    .slide {
+      top: 6rem;
+    }
+    .tet{
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #ff3b48;
+    }
   </style>
 </head>
 
 <body>
 
   <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-black py-3 text-white">
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-black py-3 text-white">
     <a class="navbar-brand fs-2 fw-bold" href="index.html">
       <span class="text-danger">Easy</span> Membership
     </a>
@@ -209,14 +219,14 @@
 
   <section class="hero-section hero-overlay position-relative bg-dark  p-0"
     style="background-image: url('images/acceuil_1_images.jpg');">
-    <div class="container h-100 position-relative" style="z-index: 2;">
+    <div class="container h-100 position-relative slide" style="z-index: 2;">
 
       <div class="row h-100 align-items-center">
 
-        <div class="col-lg-8 pt-5 pt-lg-0 text-start">
+        <div class="col-lg-8 pt-5 pt-lg-0 text-start slide">
 
-          <p class="text-danger fw-normal mb-1" style="font-size: 0.9rem;">
-            Votre Solution d'association
+          <p class="fw-normal mb-1">
+           <span class="text" style="color: #fff;">Votre Solution d'association</span> 
           </p>
 
           <h1 class="cta-text my-4 text-white">
