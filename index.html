@@ -1,22 +1,1023 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>proje easy membership</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  </head>
-  <body>
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Easy Membership - Plateforme d'adhésion associative</title>
+
+  <!-- Bootstrap CSS 5.3.8 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* -------------------------- STYLES HERO SECTION -------------------------- */
+    .hero-section {
+      /* Hauteur minimale pour la section (nécessaire pour l'image de fond) */
+      min-height: 90vh;
+      background-size: cover;
+      background-position: center;
+      /* Filtre pour simuler l'image en noir et blanc */
+      filter: grayscale(100%) contrast(1.1);
+    }
+
+    /* Le pseudo-élément pour l'overlay (calque sombre) */
+    .hero-overlay::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.65);
+      /* Noir semi-transparent */
+      z-index: 1;
+      filter: none;
+    }
+
+    /* Styles pour le titre principal */
+    .cta-text {
+      font-size: 3.5rem;
+      line-height: 1.1;
+      font-weight: 700;
+    }
+
+    /* Styles pour l'icône de lecture (le cercle rouge) */
+    .play-circle {
+      font-size: 3rem;
+      color: #FF3147;
+      transition: transform 0.2s;
+      ;
+    }
+
+    .play-circle:hover {
+      transform: scale(1.1);
+      color: red;
+    }
+
+    .service-card {
+      min-height: 400px;
+      /* Hauteur minimale pour que l'image soit visible */
+      background-size: cover;
+      background-position: center;
+      /* Simule le filtre noir et blanc de l'image d'arrière-plan */
+      filter: grayscale(100%);
+    }
+
+    /* Calque sombre sur l'image pour la rendre plus subtile */
+    .service-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.2);
+      /* Très légèrement sombre */
+      z-index: 1;
+      filter: none;
+    }
+
+    /* Cercle d'icône (Noir, utilisé pour le bouton bas) */
+    .circle-icon {
+      width: 50px;
+      height: 50px;
+      background-color: #021738;
+      /* Couleur sombre du thème */
+      color: white;
+      line-height: 50px;
+      font-size: 1.25rem;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.2);
+      /* Fond semi-transparent */
+      transition: background-color 0.3s;
+      /* Positionnement personnalisé */
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .carousel-control-prev:hover,
+    .carousel-control-next:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .grayscale-image {
+      filter: grayscale(100%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black py-3 text-white">
+    <a class="navbar-brand fs-2 fw-bold" href="index.html">
+      <span class="text-danger">Easy</span> Membership
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav text-white">
+
+        <li class="nav-item">
+          <a class="nav-link active text-white fw-semibold" href="index.html">Accueil</a>
+        </li>
+
+        <li class="nav-item dropdown ">
+          <a class="nav-link text-danger dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+            Association
+          </a>
+          <ul class="dropdown-menu text-white">
+            <li><a class="dropdown-item" href="activités.html">Nos activités</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="gestion-evenements.html">Gestion des évènements</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="actualités.html">Nos actualités</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            
+
+            <li><a class="dropdown-item" href="roles.html">Gérer les roles</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="cotisations.html">cotisations</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="membre.html">Liste des membres</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link text-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+            Vous Êtes Aidant
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="adhésion-plateforme.html">Faire un don</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="adhésion-plateforme.html">Adhérer</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <hr class="dropdown-divider">
+        </li>
+        <li><a class="dropdown-item" href="adhésion-plateforme.html">Créer un compte adhérent</a></li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+
+      </ul>
+
+      <li class="nav-item">
+        <a class="nav-link text-white" href="contact.html">Contact</a>
+      </li>
+
+      </ul>
+    </div>
+
+    <!-- BOUTON ADHÉRER -->
+    <a href="adhésion-plateforme.html" class="btn btn- px-4 py-2 fw-semibold rounded-1 d-flex align-items-center"
+      style="background-color: #ff3b48;">
+      <i class="bi bi-person-fill me-2"></i> ADHÉRER
+    </a>
+
+    </div>
+  </nav>
+
+  <section class="hero-section hero-overlay position-relative bg-dark  p-0"
+    style="background-image: url('images/acceuil_1_images.jpg');">
+    <div class="container h-100 position-relative" style="z-index: 2;">
+
+      <div class="row h-100 align-items-center">
+
+        <div class="col-lg-8 pt-5 pt-lg-0 text-start">
+
+          <p class="text-danger fw-normal mb-1" style="font-size: 0.9rem;">
+            Votre Solution d'association
+          </p>
+
+          <h1 class="cta-text my-4 text-white">
+            Disposer votre site<br>
+            vitrine en 2 semaines
+          </h1>
+
+          <div class="d-flex align-items-center mt-4">
+
+            <a href="#" class="btn btn-light text-dark fw-bold px-4 py-2 me-4 rounded-1">
+              Commencer
+            </a>
+
+            <a href="#" class="text-white text-decoration-none d-flex align-items-center fw-semibold">
+              <i class="fas fa-play-circle play-circle me-2"></i>
+              Comment Nous Travaillons
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
 
+  <section class="container-fluid text-white py-5 my-10" style="background-color:#021738;">
+    <div class="container ">
+
+      <div class="row g-4 justify-content-center">
+
+        <div class="col-lg-4 col-md-6">
+          <div class="card p-4 h-100 shadow-lg border-0">
+            <div class="card-body text-center">
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <i class="fas fa-university text-danger" style="font-size: 3rem;"></i>
+                <h1 class="display-1 text-muted opacity-25 fw-bold mb-0">01</h1>
+              </div>
+
+              <h5 class="card-title fw-bold text-dark text-start">Lorem Ipsum Dolor</h5>
+              <p class="card-text text-muted text-start">
+                Lorem ipsum dolor sit amet consectetur<br>
+                Lorem ipsum dolor sit amet consectetur<br>
+                Lorem ipsum dolor sit amet consectetur
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="card p-4 h-100 shadow-lg border-0">
+            <div class="card-body text-center">
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <i class="fas fa-handshake text-danger" style="font-size: 3rem;"></i>
+                <h1 class="display-1 text-muted opacity-25 fw-bold mb-0">02</h1>
+              </div>
+              <h5 class="card-title fw-bold text-dark text-start">Lorem Ipsum Dolor</h5>
+              <p class="card-text text-muted text-start">
+                Lorem ipsum dolor sit amet consectetur<br>
+                Lorem ipsum dolor sit amet consectetur<br>
+                Lorem ipsum dolor sit amet consectetur
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="card p-4 h-100 shadow-lg border-0">
+            <div class="card-body text-center">
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <i class="fas fa-hands-helping text-danger" style="font-size: 3rem;"></i>
+                <h1 class="display-1 text-muted opacity-25 fw-bold mb-0">03</h1>
+              </div>
+              <h5 class="card-title fw-bold text-dark text-start">Lorem Ipsum Dolor</h5>
+              <p class="card-text text-muted text-start">
+                Lorem ipsum dolor sit amet consectetur<br>
+                Lorem ipsum dolor sit amet consectetur<br>
+                Lorem ipsum dolor sit amet consectetur
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row mt-5 pt-3 text-center">
+        <div class="col-12">
+          <p class="lead mb-0 text-white">
+            Les défis ne sont que des opportunités déguisées.
+            <span class="text-danger fw-bold">Acceptez le challenge!</span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
 
 
+  <section class="container py-5 my-5">
+    <div class="row align-items-start">
+
+      <div class="col-lg-6 px-4">
+
+        <p class="text-danger fw-semibold mb-1">Qui Sommes Nous</p>
+
+        <h2 class="display-5 fw-bold text-dark mb-4" style="line-height: 1.2;">
+          Excellents services pour<br>
+          les associations et les aidants
+        </h2>
+
+        <p class="lead text-dark mb-4">
+          Lorem ipsum dolor sit amet consectetur. Ornare blandit morbi viverra
+          id. Purus interdum nunc etiam diam massa feugiat. Faucibus nibh,
+          quisque a volutpat id. Duis cras ornare praesent tincidunt.
+        </p>
+
+        <div class="row g-4 mb-4">
+
+          <div class="col-sm-6 d-flex align-items-start">
+            <div class="flex-shrink-0 me-3">
+              <i class="fas fa-desktop text-danger" style="font-size: 2rem;"></i>
+            </div>
+            <div>
+              <h6 class="fw-bold mb-0 text-dark">Design De Sites Web Et Développement</h6>
+            </div>
+          </div>
+
+          <div class="col-sm-6 d-flex align-items-start">
+            <div class="flex-shrink-0 me-3">
+              <i class="fas fa-handshake text-danger" style="font-size: 2rem;"></i>
+            </div>
+            <div>
+              <h6 class="fw-bold mb-0 text-dark">Applications Android Et IOS Développement</h6>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-secondary mb-4">
+          Lorem ipsum dolor sit amet consectetur. Ornare blandit morbi viverra
+          id. Purus interdum nunc etiam diam massa feugiat. Faucibus nibh
+          quisque a volutpat id. Duis cras ornare praesent tincidunt.
+        </p>
+
+        <a href="#" class="btn btn-danger text-white fw-bold px-4 py-2 rounded-1">
+          Lorem Ipsum Dolor
+        </a>
+
+      </div>
+
+      <div class="col-lg-6">
+        <div class="row g-3">
+
+          <div class="col-12">
+            <img src="images/acceuil_2_images.jpg" class="img-fluid rounded shadow-sm" alt="Équipe en réunion" />
+          </div>
+
+          <div class="col-6">
+            <img src="images/accueil_3_images.jpg" class="img-fluid rounded shadow-sm" alt="Personne au travail" />
+          </div>
+
+          <div class="col-6">
+            <div class="p-4 rounded h-100 d-flex flex-column justify-content-between text-white"
+              style="background-color:#021738;">
+              <h5 class="fw-bold">Entreprise</h5>
+              <h5 class="fw-bold">Programme d'éthique</h5>
+              <div class="text-center mt-3">
+                <i class="fas fa-trophy" style="font-size: 3rem; color: #FF3147;"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <section class=" text-center p-5" style="background-color:#dce2e6">
+
+
+    <!--================================================SERVICES==================================================== -->
+
+
+    <p class="text-danger fw-semibold  ">Nos Services</p>
+    <h2 class="fw-bold py-2" style="font-size: 2.25rem;"></h2>
+    Nous Sommes La Meilleure Offre De Services<br>
+    Pour Les Associations Et Les Aidants
+    </h2>
+
+    <div class="row g-4 justify-content-center py-2">
+
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 rounded-3 service-card position-relative overflow-hidden"
+          style="background-image: url('images/card1.jpg');">
+
+          <div class="card-body p-4 position-absolute bottom-0 start-0 w-100 bg-white" style="z-index: 2;">
+
+            <p class="text-danger fw-semibold mb-1">Design</p>
+            <h5 class="card-title fw-bold text-dark mb-3">Conception App</h5>
+
+            <p class="card-text text-muted mb-5 px-3" style="font-size: 0.9rem;"></p>
+            Lorem ipsum dolor sit amet consectetur. Luctus dolor sit amet cras.
+            </p>
+
+            <a href="#" class="text-decoration-none d-block">
+              <span class="circle-icon rounded-circle d-inline-flex justify-content-center align-items-center">
+                <i class="fas fa-arrow-right"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 rounded-3 service-card position-relative overflow-hidden"
+          style="background-image: url('images/card2.jpg');">
+
+          <div class="card-body p-4 position-absolute bottom-0 start-0 w-100 bg-white" style="z-index: 2;">
+
+            <p class="text-danger fw-semibold mb-1">Marketing</p>
+            <h5 class="card-title fw-bold text-dark mb-3">Recherche En Marketing</h5>
+
+            <p class="card-text text-muted mb-5 px-3" style="font-size: 0.9rem;"></p>
+            Lorem ipsum dolor sit amet consectetur. Luctus dolor sit amet cras.
+            </p>
+
+            <a href="#" class="text-decoration-none d-block">
+              <span class="circle-icon rounded-circle d-inline-flex justify-content-center align-items-center">
+                <i class="fas fa-arrow-right"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 rounded-3 service-card position-relative overflow-hidden"
+          style="background-image: url('images/card3.jpg');">
+
+          <div class="card-body p-4 position-absolute bottom-0 start-0 w-100 bg-white" style="z-index: 2;">
+
+            <p class="text-danger fw-semibold mb-1">Développement</p>
+            <h5 class="card-title fw-bold text-dark mb-3">Développement Web</h5>
+
+            <p class="card-text text-muted mb-5 px-3" style="font-size: 0.9rem;"></p>
+            Lorem ipsum dolor sit amet consectetur. Luctus dolor sit amet cras.
+            </p>
+
+            <a href="#" class="text-decoration-none d-block">
+              <span class="circle-icon rounded-circle d-inline-flex justify-content-center align-items-center">
+                <i class="fas fa-arrow-right"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <a href="#" class="btn btn-danger text-white fw-bold px-5 py-3 mt-10 rounded-1" style="background-color: #FF3147;">
+      Voici nos services</a>
+
+    </a>
+
+  </section>
+
+
+  <!-- =======Les Membres de L'équipe-============= -->
+
+  <section class="container py-5 my-5 text-center">
+
+    <p class="text-danger fw-semibold mb-1" style="font-size: 0.9rem;">Les Membres De Notre Équipe</p>
+    <h2 class="fw-bold mb-5" style="font-size: 2.25rem;">
+      L'expérience Constat À La Rencontre Des<br>
+      Employé De L'équipe
+    </h2>
+
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-lg-5 col-md-6">
+        <div class="card p-3 border-0 rounded-3 d-flex flex-row align-items-center">
+
+          <div class="flex-shrink-0 me-4" style="max-width: 120px;">
+            <img src="images/equipe1.jpg" class="img-fluid rounded-circle" alt="Harry Abraham"
+              style="filter: grayscale(100%);">
+          </div>
+
+          <div class="text-start">
+            <h5 class="fw-bold mb-0 text-dark">Harry Abraham</h5>
+            <p class="text-danger fw-semibold mb-2" style="font-size: 0.9rem;">Founder</p>
+            <p class="text-muted small mb-3">Maecenas sagittis quam interdum malesuada and metus consectetur awesome
+              cursus</p>
+
+            <div class="d-flex gap-3" style="font-size: 1.1rem;">
+              <a href="#" class="text-muted"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="text-muted"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-muted"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="text-muted"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-5 col-md-6">
+        <div class="card p-3 border-0 rounded-3 d-flex flex-row align-items-center">
+
+          <div class="flex-shrink-0 me-4" style="max-width: 120px;">
+            <img src="images/equipe2.jpg" class="img-fluid rounded-circle" alt="Thomas Ilovak"
+              style="filter: grayscale(100%);">
+          </div>
+
+          <div class="text-start">
+            <h5 class="fw-bold mb-0 text-dark">Thomas Ilovak</h5>
+            <p class="text-danger fw-semibold mb-2" style="font-size: 0.9rem;">Founder</p>
+            <p class="text-muted small mb-3">Maecenas sagittis quam interdum malesuada and metus consectetur awesome
+              cursus</p>
+
+            <div class="d-flex gap-3" style="font-size: 1.1rem;">
+              <a href="#" class="text-muted"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="text-muted"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-muted"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="text-muted"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-5 col-md-6">
+        <div class="card p-3 border-0 rounded-3 d-flex flex-row align-items-center">
+
+          <div class="flex-shrink-0 me-4" style="max-width: 120px;">
+            <img src="images/equipe3.jpg" class="img-fluid rounded-circle" alt="Edward Willey"
+              style="filter: grayscale(100%);">
+          </div>
+
+          <div class="text-start">
+            <h5 class="fw-bold mb-0 text-dark">Edward Willey</h5>
+            <p class="text-danger fw-semibold mb-2" style="font-size: 0.9rem;">Founder</p>
+            <p class="text-muted small mb-3">Maecenas sagittis quam interdum malesuada and metus consectetur awesome
+              cursus</p>
+
+            <div class="d-flex gap-3" style="font-size: 1.1rem;">
+              <a href="#" class="text-muted"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="text-muted"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-muted"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="text-muted"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-5 col-md-6">
+        <div class="card p-3 border-0 rounded-3 d-flex flex-row align-items-center">
+
+          <div class="flex-shrink-0 me-4" style="max-width: 120px;">
+            <img src="images/equipe4.jpg" class="img-fluid rounded-circle" alt="Mr Berry Castle"
+              style="filter: grayscale(100%);">
+          </div>
+
+          <div class="text-start">
+            <h5 class="fw-bold mb-0 text-dark">Mr Berry Castle</h5>
+            <p class="text-danger fw-semibold mb-2" style="font-size: 0.9rem;">Founder</p>
+            <p class="text-muted small mb-3">Maecenas sagittis quam interdum malesuada and metus consectetur awesome
+              cursus</p>
+
+            <div class="d-flex gap-3" style="font-size: 1.1rem;">
+              <a href="#" class="text-muted"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="text-muted"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-muted"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="text-muted"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ===========Adhésion en Ligne========= -->
+
+
+  <section class="container py-5 my-5">
+    <div class="row align-items-center g-5">
+
+      <div class="col-lg-6">
+        <img src="images/adhesion.jpg" class="img-fluid rounded shadow-lg" alt="Femme travaillant sur ordinateur"
+          style="filter: grayscale(100%);" />
+      </div>
+
+      <div class="col-lg-6 px-lg-5">
+
+        <h2 class="fw-bold mb-4 text-dark" style="font-size: 2rem;">Adhésion En Ligne Rapide</h2>
+
+        <form>
+          <div class="row g-3 mb-3">
+            <div class="col-md-6">
+              <input type="text" class="form-control border-0 bg-light p-3" placeholder="Votre Nom" />
+            </div>
+            <div class="col-md-6">
+              <input type="email" class="form-control border-0 bg-light p-3" placeholder="Adresse e-mail" />
+            </div>
+          </div>
+
+          <div class="row g-3 mb-3">
+            <div class="col-md-6">
+              <select class="form-select border-0 bg-light p-3">
+                <option selected>Choisissez une association</option>
+                <option value="1">Association A</option>
+                <option value="2">Association B</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <select class="form-select border-0 bg-light p-3">
+                <option selected>Choisissez ????</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <textarea class="form-control border-0 bg-light p-3" rows="5"
+              placeholder="Votre Message ou Détails Supplémentaires"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-danger text-white fw-bold px-5 py-3 rounded-1 w-100"
+            style="background-color: #FF3147;">
+            <i class="bi bi-person-fill me-2"></i> ADHÉRER
+          </button>
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========Témoignages ============= -->
+
+  <section class="container-fluid py-5 text-white"
+    style="background-image: url('images/adhesion1.jpg'); min-height: 450px;">
+    <div class="container py-5">
+      <div class="row align-items-center">
+
+        <div class="col-lg-5 text-start mb-5 mb-lg-0">
+
+          <p class="text-danger fw-semibold mb-2" style="font-size: 0.9rem;">Témoignages</p>
+          <h2 class="display-5 fw-bold mb-4" style="line-height: 1.2;">
+            Ce Que Disent Les Clients<br>
+            À Propos De Nos Services
+          </h2>
+
+          <div class="d-flex gap-3">
+            <button class="carousel-control-prev position-relative start-0 end-0" type="button"
+              data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next position-relative start-0 end-0" type="button"
+              data-bs-target="#testimonialCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+
+          <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+
+            <div class="carousel-inner">
+
+              <div class="carousel-item active">
+                <div class="card p-4 mx-auto text-start border-0 shadow-lg" style="max-width: 600px;">
+                  <div class="d-flex align-items-start">
+
+                    <div class="flex-shrink-0 me-4 position-relative">
+                      <img src="images/adhesion.jpg" class="rounded-circle" alt="Maimouna Wade"
+                        style="width: 100px; height: 100px; object-fit: cover; filter: grayscale(100%);">
+                      <i class="fas fa-quote-left text-danger position-absolute end-0 bottom-0"
+                        style="font-size: 1.5rem; background: white; padding: 5px; border-radius: 50%;"></i>
+                    </div>
+
+                    <div>
+                      <p class="text-dark small mb-3">
+                        Praesen idea and massa suscp venenina vittin in utrce sapien. Phasellus moesteevu dictumns effic
+                        useere erat pharethra melus aquet nulla number Aenean hendrerit lobortis
+                      </p>
+                      <h6 class="fw-bold mb-0 text-dark">Maïmouna Wade</h6>
+                      <p class="small text-muted mb-2">Clienta</p>
+
+                      <div class="text-danger" style="font-size: 1.1rem;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="card p-4 mx-auto text-start border-0 shadow-lg" style="max-width: 600px;">
+                  <div class="d-flex align-items-start">
+                    <div class="flex-shrink-0 me-4 position-relative">
+                      <img src="images/adhesion.jpg" class="rounded-circle" alt="Autre Client"
+                        style="width: 100px; height: 100px; object-fit: cover; filter: grayscale(100%);">
+                      <i class="fas fa-quote-left text-danger position-absolute end-0 bottom-0"
+                        style="font-size: 1.5rem; background: white; padding: 5px; border-radius: 50%;"></i>
+                    </div>
+                    <div>
+                      <p class="text-dark small mb-3">...</p>
+                      <h6 class="fw-bold mb-0 text-dark">Autre Client</h6>
+                      <p class="small text-muted mb-2">Aidant</p>
+                      <div class="text-danger" style="font-size: 1.1rem;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- =======Partenaires======= -->
+
+  <section class="container py-5 my-5 text-center bg-white">
 
 
 
+    <div class="row g-4 justify-content-center align-items-center">
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-  </body>
+      <div class="col-6 col-md-4 col-lg-2">
+        <img src="images/logo1.png" class="img-fluid opacity-75" alt="Logo Partenaire 1" style="max-height: 80px;" />
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2">
+        <img src="images/logo2.png" class="img-fluid opacity-75" alt="Logo Partenaire 2" style="max-height: 80px;" />
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2">
+        <img src="images/logo3.png" class="img-fluid opacity-75" alt="Logo Partenaire 3" style="max-height: 80px;" />
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2">
+        <img src="images/logo4.png" class="img-fluid opacity-75" alt="Logo Partenaire 4" style="max-height: 80px;" />
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2">
+        <img src="images/logo5.png" class="img-fluid opacity-75" alt="Logo Partenaire 5" style="max-height: 80px;" />
+      </div>
+
+    </div>
+  </section>
+  <!-- =======Services======= -->
+
+  <section class="container p-5 text-center bg-light">
+
+    <p class="text-danger fw-semibold mb-1">Nos Services</p>
+    <h2 class="fw-bold mb-5 text-dark" style="font-size: 2.25rem;">
+      Nous Sommes La Meilleure Offre De Services<br>
+      Pour Les Associations Et Les Aidants
+    </h2>
+
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 rounded-3 shadow-sm h-100 overflow-hidden">
+
+          <img src="images/footer1.jpg" class="card-img-top" alt="Design Conception App" />
+
+          <div class="card-body p-4">
+
+            <p class="text-danger fw-semibold mb-1">Design</p>
+            <h5 class="card-title fw-bold text-dark mb-3">Conception App</h5>
+
+            <p class="card-text text-muted mb-4 px-3 small">
+              Lorem ipsum dolor sit amet consectetur. Luctus dolor sit amet cras.
+            </p>
+
+            <a href="#" class="rounded-circle d-inline-flex justify-content-center align-items-center"
+              style="background-color: #021738; color: white; width: 50px; height: 50px;">
+              <i class="fas fa-arrow-right" style="font-size: 1.25rem;"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 rounded-3 shadow-sm h-100 overflow-hidden">
+
+          <img src="images/footer2.jpg" class="card-img-top" alt="Recherche En Marketing" />
+
+          <div class="card-body p-4">
+            <p class="text-danger fw-semibold mb-1">Marketing</p>
+            <h5 class="card-title fw-bold text-dark mb-3">Recherche En Marketing</h5>
+            <p class="card-text text-muted mb-4 px-3 small">
+              Lorem ipsum dolor sit amet consectetur. Luctus dolor sit amet cras.
+            </p>
+
+            <a href="#" class="rounded-circle d-inline-flex justify-content-center align-items-center"
+              style="background-color: #021738; color: white; width: 50px; height: 50px;">
+              <i class="fas fa-arrow-right" style="font-size: 1.25rem;"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 rounded-3 shadow-sm h-100 overflow-hidden">
+
+          <img src="images/footer3.jpg" class="card-img-top" alt="Développement Web" />
+
+          <div class="card-body p-4">
+            <p class="text-danger fw-semibold mb-1">Développement</p>
+            <h5 class="card-title fw-bold text-dark mb-3">Développement Web</h5>
+            <p class="card-text text-muted mb-4 px-3 small">
+              Lorem ipsum dolor sit amet consectetur. Luctus dolor sit amet cras.
+            </p>
+
+            <a href="#" class="rounded-circle d-inline-flex justify-content-center align-items-center"
+              style="background-color: #021738; color: white; width: 50px; height: 50px;">
+              <i class="fas fa-arrow-right" style="font-size: 1.25rem;"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <a href="#" class="btn text-white fw-bold px-5 py-3 mt-5 rounded-1" style="background-color: #FF3147;">
+      Lorem Ipsum Dolor
+    </a>
+  </section>
+
+
+  <!-- =============FOOTER================ -->
+  <!-- FOOTER -->
+<footer class="text-white pt-5 pb-5" style="background-color:#021738;">
+  <div class="container">
+
+    <div class="row gy-5">
+
+      <!-- COL 1 -->
+      <div class="col-lg-3 col-md-6">
+        <h3 class="fw-bold">
+          <span style="color:#ff3b48;">Easy</span> Membership
+        </h3>
+
+        <h5 class="mt-3 fw-semibold">À Propos De Nous</h5>
+
+        <p class="mt-3 text-light" style="max-width:250px;">
+          Enthusia drive accurarie users vas tha effective interface nergsticaly purse adaptive cores create rough effective create interface.
+        </p>
+
+        <!-- Icônes réseaux -->
+        <div class="d-flex gap-3 mt-4">
+          <a href="#" class="d-flex justify-content-center align-items-center rounded-circle"
+             style="width:40px;height:40px;background:#ff3b48;color:#fff;">
+            <i class="bi bi-facebook"></i>
+          </a>
+
+          <a href="#" class="d-flex justify-content-center align-items-center rounded-circle"
+             style="width:40px;height:40px;background:#ff3b48;color:#fff;">
+            <i class="bi bi-twitter"></i>
+          </a>
+
+          <a href="#" class="d-flex justify-content-center align-items-center rounded-circle"
+             style="width:40px;height:40px;background:#ff3b48;color:#fff;">
+            <i class="bi bi-instagram"></i>
+          </a>
+
+          <a href="#" class="d-flex justify-content-center align-items-center rounded-circle"
+             style="width:40px;height:40px;background:#ff3b48;color:#fff;">
+            <i class="bi bi-linkedin"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- COL 2 -->
+      <div class="col-lg-3 col-md-6">
+        <h5 class="fw-semibold mb-4">Liens Vers Les Pages</h5>
+
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="index.html" class="text-light text-decoration-none">Accueil</a></li>
+        
+
+         <li class="nav-item dropdown">
+          <a class="nav-link text-danger dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+            Association
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="activites.html">Nos activités</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="actualites.html">Nos actualités</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="evenements.html">Nos événements</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="partenaires.html">Nos partenaires</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="roles.html">Gérer les roles</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="tableau-de-bord.html">Tableau de bord</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="gestion-membres.html">Liste des membres</a></li>
+          </ul>
+        </li>
+
+        <!-- MENU DÉROULANT Aidant -->
+        <li class="nav-item dropdown">
+          <a class="nav-link text-light text-decoration-none dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+            Vous Êtes Aidant
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="faire-don.html">Faire un don</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="adherer.html">Adhérer</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="conditions-adhesion.html">Conditions d'adhésion</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Adhérer en ligne et payer les frais</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Créer un compte adhérent</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="cotisations.html"> cotisations </a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Alertes</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Opportunités et informations</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Recevoir des dons</a></li>
+          </ul>
+        </li>
+
+      
+          <li class="mb-2"><a href="contact.html" class="text-light text-decoration-none">Contact</a></li>
+          <li><a href="faq.html" class="text-light text-decoration-none">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- COL 3 : POSTS -->
+      <div class="col-lg-3 col-md-6">
+        <h5 class="fw-semibold mb-4">Post Récent</h5>
+
+        <!-- Post 1 -->
+        <div class="row mb-4">
+          <div class="col-4">
+            <img src="img12.jpg" class="img-fluid rounded" alt="Conseils association">
+          </div>
+          <div class="col">
+            <p class="fw-semibold mb-1">Conseils Pour Réussir En Association</p>
+            <small><i class="bi bi-calendar2"></i> 21 Avril 2022</small>
+          </div>
+        </div>
+
+        <hr class="text-secondary">
+
+        <!-- Post 2 -->
+        <div class="row">
+          <div class="col-4">
+            <img src="img11.jpg" class="img-fluid rounded" alt="Événements associatifs">
+          </div>
+          <div class="col">
+            <p class="fw-semibold mb-1">Événements Associatifs 2022</p>
+            <small><i class="bi bi-calendar2"></i> 23 Avril 2022</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- COL 4 : PHOTOS -->
+      <div class="col-lg-3 col-md-6">
+        <h5 class="fw-semibold mb-4">Photos Récentes</h5>
+
+        <div class="row g-2">
+          <div class="col-4"><img src="img12.jpg" class="img-fluid rounded" alt="Activité 1"></div>
+          <div class="col-4"><img src="img11.jpg" class="img-fluid rounded" alt="Activité 2"></div>
+          <div class="col-4"><img src="img5.jpg" class="img-fluid rounded" alt="Activité 3"></div>
+          <div class="col-4"><img src="img7.jpg" class="img-fluid rounded" alt="Activité 4"></div>
+          <div class="col-4"><img src="img8.jpg" class="img-fluid rounded" alt="Activité 5"></div>
+          <div class="col-4"><img src="img4.jpg" class="img-fluid rounded" alt="Activité 6"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+  <!-- Bootstrap JS 5.3.8 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
 </html>
